@@ -7,7 +7,7 @@ public class SpawnCamion_Script : MonoBehaviour
 
     [SerializeField] GameObject[] Prefab_Camion;
     [SerializeField] int SelectionCamion;
-    private int camionModel;
+    public int camionModel;
     
     public void LancerCamion()
     {
@@ -15,7 +15,10 @@ public class SpawnCamion_Script : MonoBehaviour
         if(SelectionCamion == -1)
             SelectionCamion = Random.Range(0, Prefab_Camion.Length);
         camionModel = SelectionCamion;
-        Instantiate(Prefab_Camion[camionModel]);
+        Instantiate(Prefab_Camion[camionModel],transform.position, transform.rotation, this.gameObject.transform) ;
+       
     }
+
+    
     
 }

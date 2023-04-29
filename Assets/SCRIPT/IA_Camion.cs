@@ -5,9 +5,11 @@ using UnityEngine.AI;
 
 public class IA_Camion : MonoBehaviour
 {
+    public GameObject Objectif;
+    public bool ObjAttend=false;
     private Camion_Class camion;
     [SerializeField] List<GameObject> Destination;
-    private Vector3 currentTarget;
+    public Vector3 currentTarget;
     private NavMeshAgent navMeshAgent;
 
     [SerializeField] bool CurrentTargetSet;
@@ -30,9 +32,11 @@ public class IA_Camion : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         Usine = this.transform.GetComponentInParent<Usine_Script>();
-        this.GetComponent<MeshRenderer>().material = Usine.Material;
+        Objectif = Usine.Objectif;
+        //this.GetComponent<MeshRenderer>().material = Usine.Material;
         setDestination(Usine.CheckPointSelectionner);
         camion = new Camion_Class(VitesseCamion, Destination);
         CurrentTargetSet = false;
@@ -46,7 +50,11 @@ public class IA_Camion : MonoBehaviour
         {
             Deplacement();
         }
-        Carton();
+        else
+        {
+            Carton();
+        }
+        
     }
 
     private void Deplacement()
@@ -59,9 +67,12 @@ public class IA_Camion : MonoBehaviour
 
         Vector3 DistanceToCurrentTarget = transform.position - currentTarget;
 
-        if (DistanceToCurrentTarget.magnitude < RangeForChangeCurrentTarget)
+        if (DistanceToCurrentTarget.magnitude <= 1f/*RangeForChangeCurrentTarget*/)
+        {
             CurrentTargetSet = false;
-        Debug.Log("Camion Destination Attente");
+            Debug.Log("Camion Destination Attente");
+        }
+            
     }
 
     public void setDestination(List<GameObject>destination)
@@ -73,6 +84,10 @@ public class IA_Camion : MonoBehaviour
     {
         Debug.Log("Prochaine desination");
         currentTarget = camion.GetNextDestination(i);
+        if(currentTarget == new Vector3(1000, 1000, 1000))
+        {
+            gameManager.levelLoose();
+        }
         i++;
         CurrentTargetSet = true;
     }
@@ -86,19 +101,25 @@ public class IA_Camion : MonoBehaviour
                 Carton();
                 break;
             case "Livraision":
-                ColisLivrer();
+                ColisLivrer(other);
                 break;
+             
         }
 
     }
     private void Carton()
     {
+        
         gameManager.levelLoose();
         //carton
     }
 
-    private void ColisLivrer()
+    private void ColisLivrer(Collider other)
     {
-        gameManager.ChangerLaScene();
+        if(other.gameObject.name == Objectif.name)
+        {
+            gameManager.ChangerLaScene();
+        }
+        gameManager.levelLoose();
     }
 }

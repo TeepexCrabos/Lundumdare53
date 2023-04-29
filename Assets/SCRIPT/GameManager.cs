@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     private string lastLevel;
     private GameObject UsineSelect;
     private bool UsineSel = false;
+    public SpawnCamion_Script usineee;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,23 +25,41 @@ public class GameManager : MonoBehaviour
    
     public void SetUsine(List<GameObject>UsineDansleNiveau)
     {
-        for(int i = 0; i < usine.Count; i++)
+        usine = UsineDansleNiveau;
+        /*for(int i = 0; i < usine.Count; i++)
         {
             usine.RemoveAt(i);
         }
         for(int j = 0; j < UsineDansleNiveau.Count; j++)
         {
             usine.Add(UsineDansleNiveau[j]);
-        }
+        }*/
     }
 
 
     public void Play()
     {
-        for(int i = 0; i < usine.Count; i++)
+        bool valider = false;
+         for(int i = 0; i < usine.Count; i++)
         {
-            usine[i].GetComponent<SpawnCamion_Script>().LancerCamion();
+            if(usine[i].GetComponent<Usine_Script>().CheckPointSelectionner[0]!=null)
+            {
+                valider = true;
+            }
+            else
+            {
+                valider = false;
+            }
+            
         }
+         if(valider == true)
+        {
+            for (int i = 0; i < usine.Count; i++)
+            {
+                usine[i].GetComponent<SpawnCamion_Script>().LancerCamion();
+            }
+        }
+        
     }
 
    public void Setlevel(string level)
@@ -57,10 +76,10 @@ public class GameManager : MonoBehaviour
             Usine.GetComponent<Usine_Script>().IsSelect();
             UsineSelect = Usine;
         }
-        else if(UsineSel == true && Usine.GetComponent<Usine_Script>().select == false)
+        /*else if(UsineSel == true && Usine.GetComponent<Usine_Script>().select == false)
         {
             Debug.Log("Deselectionner l'usine selectionner");
-        }
+        }*/
         else if(UsineSel == true && Usine.GetComponent<Usine_Script>().select == true)
         {
             Usine.GetComponent<Usine_Script>().IsSelect();
@@ -70,28 +89,88 @@ public class GameManager : MonoBehaviour
     }
     public void CheckPointSelector(GameObject CheckPoint)
     {
-        
+        bool suppr = false;
+        int j = 0;
+        int count = 0;
         if (UsineSelect != null)
         {
-            for (int i = 0; i < UsineSelect.GetComponent<Usine_Script>().CheckPointSelectionner.Count; i++)
+            Debug.Log("usine select");
+            if (UsineSelect.GetComponent<Usine_Script>().CheckPointSelectionner.Count > 0)
             {
-                if (CheckPoint == UsineSelect.GetComponent<Usine_Script>().CheckPointSelectionner[i])
+                Debug.Log("pointselectsupp0");
+                foreach (GameObject PointSelect in UsineSelect.GetComponent<Usine_Script>().CheckPointSelectionner)
                 {
-                    UsineSelect.GetComponent<Usine_Script>().CheckPointSelectionner.RemoveAt(i);
-                    Debug.Log("Point Suprimer");
-                    break;
-
+                    if(PointSelect.name == CheckPoint.name)
+                    {
+                        
+                       
+                        suppr = true;
+                    }
                 }
-                else
+                if(suppr == true)
+                {
+                    for (int i = 0; i < UsineSelect.GetComponent<Usine_Script>().CheckPointSelectionner.Count; i++)
+                    {
+                        if (UsineSelect.GetComponent<Usine_Script>().CheckPointSelectionner[i].name == CheckPoint.name)
+                        {
+                            j = i;
+                            count = UsineSelect.GetComponent<Usine_Script>().CheckPointSelectionner.Count;
+                        }
+                    }
+                    Debug.Log("Bob");
+                    while(count > j)
+                    {
+                        UsineSelect.GetComponent<Usine_Script>().CheckPointSelectionner.RemoveAt(j);
+                        Debug.Log("Point Suprimer");
+                        Debug.Log(count);
+                        Debug.Log(j);
+                        count--;
+                    }
+                }
+                
+                if (suppr == false)
                 {
                     CheckPoint.GetComponent<checkpoint_Script>().Select(UsineSelect);
                     Debug.Log("Point Enregistrer");
-                    break;
-                   
                 }
-
+               
             }
+            else
+            {
+                CheckPoint.GetComponent<checkpoint_Script>().Select(UsineSelect);
+                Debug.Log("Point Enregistrer");
+            }
+            /*Debug.Log("BoB1");
+            if (UsineSelect.GetComponent<Usine_Script>().CheckPointSelectionner.Count == 1)
+            {
+                Debug.Log("BoB2");
+                for (int i = 0; i < UsineSelect.GetComponent<Usine_Script>().CheckPointSelectionner.Count; i++)
+                {
+                    if (CheckPoint.name == UsineSelect.GetComponent<Usine_Script>().CheckPointSelectionner[i].name)
+                    {
+                        UsineSelect.GetComponent<Usine_Script>().CheckPointSelectionner.RemoveAt(i);
+                        Debug.Log("Point Suprimer");
+                        break;
 
+                    }
+                    else 
+                    {
+                        CheckPoint.GetComponent<checkpoint_Script>().Select(UsineSelect);
+                        Debug.Log("Point Enregistrer");
+                        
+
+                    }
+
+                }
+                
+            }
+            else
+            {
+                Debug.Log("BoB2'");
+                CheckPoint.GetComponent<checkpoint_Script>().Select(UsineSelect);
+                Debug.Log("Point Enregistrer");
+            }
+            */
         }
         else
         {
@@ -141,7 +220,7 @@ public class GameManager : MonoBehaviour
     }
     public void levelLoose()
     {
-        SceneManager.LoadScene("GAMEOVER");
+        SceneManager.LoadScene("GAMEOVER_MENU");
     }
 
     public void quit()

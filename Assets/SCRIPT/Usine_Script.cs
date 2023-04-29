@@ -7,6 +7,7 @@ public class Usine_Script : MonoBehaviour
      public bool select = false;
      public List<GameObject> CheckPointSelectionner;
      public Material Material;
+    public GameObject Objectif;
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +34,7 @@ public class Usine_Script : MonoBehaviour
         }
         select = true;
         this.gameObject.GetComponent<checkpoint_Script>().Select(this.gameObject);
-        AddCheckPoint(this.gameObject);
+        //AddCheckPoint(this.gameObject);
         Debug.Log("usine select confirm");
 
 

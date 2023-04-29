@@ -15,4 +15,16 @@ public class LevelManager : MonoBehaviour
         GameManager.Setlevel(Niveau);
         GameManager.SetUsine(UsineDansLeNiveau);
     }
+
+   /* public void play()
+    {
+        Debug.Log("bob");
+        for (int i = 0; i < UsineDansLeNiveau.Count; i++)
+        {
+            Debug.Log(UsineDansLeNiveau[i].GetComponent<SpawnCamion_Script>());
+            UsineDansLeNiveau[i].GetComponent<SpawnCamion_Script>();//LancerCamion();
+           
+        }
+        Debug.Log("bob3");
+    }*/
 }

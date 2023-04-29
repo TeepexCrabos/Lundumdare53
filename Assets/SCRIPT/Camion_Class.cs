@@ -15,7 +15,15 @@ public class Camion_Class
 
     public Vector3 GetNextDestination(int i)
     {
-        return Destination[i].transform.position;
+        if (i < Destination.Count)
+        {
+            return Destination[i].transform.position;
+           
+        }
+        else
+        {
+            return new Vector3(1000, 1000, 1000);
+        }
     }
 
 }
