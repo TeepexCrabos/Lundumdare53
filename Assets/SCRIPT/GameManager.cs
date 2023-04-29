@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    private List<GameObject> usine = new List<GameObject>();
+    [SerializeField]private List<GameObject> usine = new List<GameObject>();
     [SerializeField] private string Niveau;
     private string lastLevel;
     private GameObject UsineSelect;
@@ -80,11 +80,14 @@ public class GameManager : MonoBehaviour
                     UsineSelect.GetComponent<Usine_Script>().CheckPointSelectionner.RemoveAt(i);
                     Debug.Log("Point Suprimer");
                     break;
+
                 }
                 else
                 {
                     CheckPoint.GetComponent<checkpoint_Script>().Select(UsineSelect);
                     Debug.Log("Point Enregistrer");
+                    break;
+                   
                 }
 
             }

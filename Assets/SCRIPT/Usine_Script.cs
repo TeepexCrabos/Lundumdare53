@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Usine_Script : MonoBehaviour
 {
-     public bool select;
+     public bool select = false;
      public List<GameObject> CheckPointSelectionner;
      public Material Material;
 
@@ -32,7 +32,11 @@ public class Usine_Script : MonoBehaviour
             IsDeselect();
         }
         select = true;
-       
+        this.gameObject.GetComponent<checkpoint_Script>().Select(this.gameObject);
+        AddCheckPoint(this.gameObject);
+        Debug.Log("usine select confirm");
+
+
     }
 
     public void IsDeselect()

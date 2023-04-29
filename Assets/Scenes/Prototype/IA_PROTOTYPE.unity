@@ -107,7 +107,7 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
+    agentRadius: 0.1
     agentHeight: 2
     agentSlope: 45
     agentClimb: 0.4
@@ -115,7 +115,7 @@ NavMeshSettings:
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.033333335
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -207,7 +207,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 24615888}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 536576636}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CheckPointSelector
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 258527380}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &24615888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,7 +341,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 42763973}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 536576636}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CheckPointSelector
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 258527363}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &42763973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -754,7 +778,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 112884295}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 536576636}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CheckPointSelector
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 258527368}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &112884295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -995,7 +1031,7 @@ PrefabInstance:
     - target: {fileID: 585360015102281635, guid: 8ee1c5319232143449d724adbe419595,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2
+      value: -2.66
       objectReference: {fileID: 0}
     - target: {fileID: 585360015102281635, guid: 8ee1c5319232143449d724adbe419595,
         type: 3}
@@ -1073,6 +1109,26 @@ PrefabInstance:
       propertyPath: CheckPointSuivant.Array.data[2]
       value: 
       objectReference: {fileID: 1418316821}
+    - target: {fileID: 1122843987194650324, guid: 8ee1c5319232143449d724adbe419595,
+        type: 3}
+      propertyPath: CheckPointSuivant.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122843987194650324, guid: 8ee1c5319232143449d724adbe419595,
+        type: 3}
+      propertyPath: CheckPointSuivant.Array.data[0]
+      value: 
+      objectReference: {fileID: 258527374}
+    - target: {fileID: 1122843987194650324, guid: 8ee1c5319232143449d724adbe419595,
+        type: 3}
+      propertyPath: CheckPointSuivant.Array.data[1]
+      value: 
+      objectReference: {fileID: 258527388}
+    - target: {fileID: 1122843987194650324, guid: 8ee1c5319232143449d724adbe419595,
+        type: 3}
+      propertyPath: CheckPointSuivant.Array.data[2]
+      value: 
+      objectReference: {fileID: 258527376}
     - target: {fileID: 1122843987446192291, guid: 8ee1c5319232143449d724adbe419595,
         type: 3}
       propertyPath: CheckPointSuivant.Array.size
@@ -1083,6 +1139,56 @@ PrefabInstance:
       propertyPath: CheckPointSuivant.Array.data[2]
       value: 
       objectReference: {fileID: 1418316821}
+    - target: {fileID: 1122843987873292385, guid: 8ee1c5319232143449d724adbe419595,
+        type: 3}
+      propertyPath: CheckPointSuivant.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122843987873292385, guid: 8ee1c5319232143449d724adbe419595,
+        type: 3}
+      propertyPath: CheckPointSuivant.Array.data[0]
+      value: 
+      objectReference: {fileID: 258527379}
+    - target: {fileID: 1122843987873292385, guid: 8ee1c5319232143449d724adbe419595,
+        type: 3}
+      propertyPath: CheckPointSuivant.Array.data[1]
+      value: 
+      objectReference: {fileID: 258527377}
+    - target: {fileID: 1122843987873292385, guid: 8ee1c5319232143449d724adbe419595,
+        type: 3}
+      propertyPath: CheckPointSuivant.Array.data[2]
+      value: 
+      objectReference: {fileID: 1417283336}
+    - target: {fileID: 1122843987873292387, guid: 8ee1c5319232143449d724adbe419595,
+        type: 3}
+      propertyPath: CheckPointSuivant.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122843987873292387, guid: 8ee1c5319232143449d724adbe419595,
+        type: 3}
+      propertyPath: CheckPointSuivant.Array.data[0]
+      value: 
+      objectReference: {fileID: 258527385}
+    - target: {fileID: 1122843987873292387, guid: 8ee1c5319232143449d724adbe419595,
+        type: 3}
+      propertyPath: CheckPointSuivant.Array.data[1]
+      value: 
+      objectReference: {fileID: 258527357}
+    - target: {fileID: 1122843987873292387, guid: 8ee1c5319232143449d724adbe419595,
+        type: 3}
+      propertyPath: CheckPointSuivant.Array.data[2]
+      value: 
+      objectReference: {fileID: 1417283336}
+    - target: {fileID: 1122843988023755331, guid: 8ee1c5319232143449d724adbe419595,
+        type: 3}
+      propertyPath: CheckPointSuivant.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1122843988023755331, guid: 8ee1c5319232143449d724adbe419595,
+        type: 3}
+      propertyPath: CheckPointSuivant.Array.data[2]
+      value: 
+      objectReference: {fileID: 258527375}
     - target: {fileID: 1193955856710338441, guid: 8ee1c5319232143449d724adbe419595,
         type: 3}
       propertyPath: m_Icon
@@ -1524,6 +1630,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7573084172894361792, guid: 8ee1c5319232143449d724adbe419595,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7742661165952708126, guid: 8ee1c5319232143449d724adbe419595,
         type: 3}
       propertyPath: m_Icon
@@ -1640,6 +1751,210 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ee1c5319232143449d724adbe419595, type: 3}
+--- !u!1 &258527355 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4451208773484020412, guid: 8ee1c5319232143449d724adbe419595,
+    type: 3}
+  m_PrefabInstance: {fileID: 258527354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &258527356 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8827146367954200316, guid: 8ee1c5319232143449d724adbe419595,
+    type: 3}
+  m_PrefabInstance: {fileID: 258527354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &258527357 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2693094884664985749, guid: 8ee1c5319232143449d724adbe419595,
+    type: 3}
+  m_PrefabInstance: {fileID: 258527354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &258527358 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8405254791348899964, guid: 8ee1c5319232143449d724adbe419595,
+    type: 3}
+  m_PrefabInstance: {fileID: 258527354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &258527359 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1862360620725642716, guid: 8ee1c5319232143449d724adbe419595,
+    type: 3}
+  m_PrefabInstance: {fileID: 258527354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &258527360 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6207276319048783646, guid: 8ee1c5319232143449d724adbe419595,
+    type: 3}
+  m_PrefabInstance: {fileID: 258527354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &258527361 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3265467332112828486, guid: 8ee1c5319232143449d724adbe419595,
+    type: 3}
+  m_PrefabInstance: {fileID: 258527354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &258527362 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 410882772943107966, guid: 8ee1c5319232143449d724adbe419595,
+    type: 3}
+  m_PrefabInstance: {fileID: 258527354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &258527363 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6838016687888138597, guid: 8ee1c5319232143449d724adbe419595,
+    type: 3}
+  m_PrefabInstance: {fileID: 258527354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &258527364 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7773442575816154654, guid: 8ee1c5319232143449d724adbe419595,
+    type: 3}
+  m_PrefabInstance: {fileID: 258527354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &258527365 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7742661165952708126, guid: 8ee1c5319232143449d724adbe419595,
+    type: 3}
+  m_PrefabInstance: {fileID: 258527354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &258527366 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8581524359757365893, guid: 8ee1c5319232143449d724adbe419595,
+    type: 3}
+  m_PrefabInstance: {fileID: 258527354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &258527367 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8410649858555828227, guid: 8ee1c5319232143449d724adbe419595,
+    type: 3}
+  m_PrefabInstance: {fileID: 258527354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &258527368 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2660266526781432344, guid: 8ee1c5319232143449d724adbe419595,
+    type: 3}
+  m_PrefabInstance: {fileID: 258527354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &258527369 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5023631377357772131, guid: 8ee1c5319232143449d724adbe419595,
+    type: 3}
+  m_PrefabInstance: {fileID: 258527354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &258527370 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8473454547297582895, guid: 8ee1c5319232143449d724adbe419595,
+    type: 3}
+  m_PrefabInstance: {fileID: 258527354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &258527371 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4178368552428572143, guid: 8ee1c5319232143449d724adbe419595,
+    type: 3}
+  m_PrefabInstance: {fileID: 258527354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &258527372 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5280199530522328434, guid: 8ee1c5319232143449d724adbe419595,
+    type: 3}
+  m_PrefabInstance: {fileID: 258527354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &258527373 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4678743627322568440, guid: 8ee1c5319232143449d724adbe419595,
+    type: 3}
+  m_PrefabInstance: {fileID: 258527354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &258527374 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3250044202700715836, guid: 8ee1c5319232143449d724adbe419595,
+    type: 3}
+  m_PrefabInstance: {fileID: 258527354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &258527375 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1550913053590797811, guid: 8ee1c5319232143449d724adbe419595,
+    type: 3}
+  m_PrefabInstance: {fileID: 258527354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &258527376 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5160523603170509324, guid: 8ee1c5319232143449d724adbe419595,
+    type: 3}
+  m_PrefabInstance: {fileID: 258527354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &258527377 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3953422291921854581, guid: 8ee1c5319232143449d724adbe419595,
+    type: 3}
+  m_PrefabInstance: {fileID: 258527354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &258527378 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3489693807591972522, guid: 8ee1c5319232143449d724adbe419595,
+    type: 3}
+  m_PrefabInstance: {fileID: 258527354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &258527379 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1881178889803308257, guid: 8ee1c5319232143449d724adbe419595,
+    type: 3}
+  m_PrefabInstance: {fileID: 258527354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &258527380 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6523157105776903252, guid: 8ee1c5319232143449d724adbe419595,
+    type: 3}
+  m_PrefabInstance: {fileID: 258527354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &258527381 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4355883660605127540, guid: 8ee1c5319232143449d724adbe419595,
+    type: 3}
+  m_PrefabInstance: {fileID: 258527354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &258527382 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1098305014669635083, guid: 8ee1c5319232143449d724adbe419595,
+    type: 3}
+  m_PrefabInstance: {fileID: 258527354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &258527383 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8102051395295727243, guid: 8ee1c5319232143449d724adbe419595,
+    type: 3}
+  m_PrefabInstance: {fileID: 258527354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &258527384 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6346784916019765010, guid: 8ee1c5319232143449d724adbe419595,
+    type: 3}
+  m_PrefabInstance: {fileID: 258527354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &258527385 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4174512069057649803, guid: 8ee1c5319232143449d724adbe419595,
+    type: 3}
+  m_PrefabInstance: {fileID: 258527354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &258527386 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 197092748565491137, guid: 8ee1c5319232143449d724adbe419595,
+    type: 3}
+  m_PrefabInstance: {fileID: 258527354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &258527387 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7072349340547329657, guid: 8ee1c5319232143449d724adbe419595,
+    type: 3}
+  m_PrefabInstance: {fileID: 258527354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &258527388 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3612399221373920600, guid: 8ee1c5319232143449d724adbe419595,
+    type: 3}
+  m_PrefabInstance: {fileID: 258527354}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &284059005
 GameObject:
   m_ObjectHideFlags: 0
@@ -1864,7 +2179,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 317441250}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 536576636}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CheckPointSelector
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 258527383}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &317441250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2236,7 +2563,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 348442792}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 536576636}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CheckPointSelector
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 258527376}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &348442792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2493,7 +2832,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 434806139}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 536576636}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CheckPointSelector
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 258527379}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &434806139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2532,12 +2883,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 434806136}
   m_CullTransparentMesh: 1
---- !u!1 &441182168 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1193955856710338441, guid: 8ee1c5319232143449d724adbe419595,
-    type: 3}
-  m_PrefabInstance: {fileID: 258527354}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &466616499
 GameObject:
   m_ObjectHideFlags: 0
@@ -2854,6 +3199,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a830576b4c2c73428e579fbd4b352c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  usine: []
+  Niveau: 
 --- !u!1 &598791312
 GameObject:
   m_ObjectHideFlags: 0
@@ -2937,7 +3284,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 598791315}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 536576636}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CheckPointSelector
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 258527382}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &598791315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3194,7 +3553,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 632269052}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 536576636}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CheckPointSelector
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 258527371}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &632269052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3316,7 +3687,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 683078851}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 536576636}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CheckPointSelector
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 258527356}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &683078851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3438,7 +3821,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 696700780}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 536576636}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CheckPointSelector
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 258527367}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &696700780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3965,7 +4360,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 779698427}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 536576636}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CheckPointSelector
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 258527375}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &779698427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4222,7 +4629,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 829392366}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 536576636}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CheckPointSelector
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 258527361}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &829392366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4736,7 +5155,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 880781756}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 536576636}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CheckPointSelector
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 258527362}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &880781756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4993,7 +5424,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 941438311}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 536576636}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CheckPointSelector
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 258527385}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &941438311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5250,7 +5693,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 953324073}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 536576636}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CheckPointSelector
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 258527386}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &953324073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5507,7 +5962,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1091460923}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 536576636}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CheckPointSelector
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 258527387}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1091460923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5629,7 +6096,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1160952900}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 536576636}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CheckPointSelector
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 258527370}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1160952900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5705,7 +6184,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 26.2, y: -25.2}
+  m_AnchoredPosition: {x: -13.06, y: 8.92}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1161440000
@@ -5751,7 +6230,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1161440001}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 536576636}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: UsineSelector
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1417283336}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1161440001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5873,7 +6364,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1183229373}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 536576636}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CheckPointSelector
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 258527372}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1183229373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5949,7 +6452,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 31.09, y: -25.2}
+  m_AnchoredPosition: {x: 24.31, y: -23.5}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1221468862
@@ -6387,7 +6890,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1239502050}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 536576636}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CheckPointSelector
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 258527384}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1239502050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6949,7 +7464,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1373245880}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 536576636}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CheckPointSelector
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 258527366}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1373245880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7117,8 +7644,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Selectionner: 0
   CheckPointSuivant:
-  - {fileID: 441182168}
   - {fileID: 309798419}
+  - {fileID: 258527378}
 --- !u!114 &1417283345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7330,7 +7857,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1511545851}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 536576636}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CheckPointSelector
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 258527357}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1511545851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7452,7 +7991,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1572148317}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 536576636}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CheckPointSelector
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 258527377}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1572148317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7574,7 +8125,7 @@ GameObject:
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!154 &1594506946
@@ -7968,7 +8519,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1654816615}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 536576636}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CheckPointSelector
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 258527360}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1654816615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8090,7 +8653,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1657349975}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 536576636}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CheckPointSelector
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 258527388}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1657349975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8347,7 +8922,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1678430366}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 536576636}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CheckPointSelector
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 258527364}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1678430366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8469,7 +9056,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1711763634}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 536576636}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CheckPointSelector
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 258527373}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1711763634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8726,7 +9325,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1778500053}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 536576636}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CheckPointSelector
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 258527359}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1778500053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9118,7 +9729,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1810093158}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 536576636}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CheckPointSelector
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 309798419}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1810093158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9375,7 +9998,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1853300437}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 536576636}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CheckPointSelector
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 258527365}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1853300437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9728,7 +10363,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b802a952522fd04e95df3520180128f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UsineDansLeNiveau: []
+  UsineDansLeNiveau:
+  - {fileID: 1161439998}
+  Niveau: LEVEL1
 --- !u!1 &1931775645
 GameObject:
   m_ObjectHideFlags: 0
@@ -10217,7 +10854,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1956085804}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 536576636}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CheckPointSelector
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 258527355}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1956085804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10609,7 +11258,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1976514774}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 536576636}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CheckPointSelector
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 258527358}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1976514774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10731,7 +11392,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1976582281}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 536576636}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CheckPointSelector
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 258527381}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1976582281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11241,7 +11914,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2068296448}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 536576636}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CheckPointSelector
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 258527378}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2068296448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11363,7 +12048,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2076101140}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 536576636}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CheckPointSelector
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 258527369}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2076101140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11485,7 +12182,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2086135314}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 536576636}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CheckPointSelector
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 258527374}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2086135314
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,14 +12,22 @@ public class checkpoint_Script : MonoBehaviour
     // Start is called before the first frame update
     public void Select(GameObject UsineSelect)
     {
+       
         for(int i = 0; i < CheckPointSuivant.Length; i++)
         {
             if(CheckPointSuivant[i].GetComponent<checkpoint_Script>().Selectionner == true)
             {
                 Selectionner = true;
                 UsineSelect.GetComponent<Usine_Script>().AddCheckPoint(this.gameObject);
+                Debug.Log("CheckPointAjouterAlaliste");
+                break;
             }
-            break;
+            
+        }
+        if(UsineSelect.name == this.gameObject.name)
+        {
+            Debug.Log("Select CheckPoint");
+            Selectionner = true;
         }
         
     }
