@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class checkpoint_Script : MonoBehaviour
 {
-    [SerializeField] bool Selectionner = false;
+    public bool Selectionner = false;
     [SerializeField] private GameObject[] CheckPointSuivant;
    
 
 
     // Start is called before the first frame update
-    public void Select()
+    public void Select(GameObject UsineSelect)
     {
-        Selectionner = true;
-
+        for(int i = 0; i < CheckPointSuivant.Length; i++)
+        {
+            if(CheckPointSuivant[i].GetComponent<checkpoint_Script>().Selectionner == true)
+            {
+                Selectionner = true;
+                UsineSelect.GetComponent<Usine_Script>().AddCheckPoint(this.gameObject);
+            }
+            break;
+        }
+        
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Usine_Script : MonoBehaviour
 {
-    [SerializeField] private bool select;
+     public bool select;
      public List<GameObject> CheckPointSelectionner;
      public Material Material;
 
@@ -27,16 +27,17 @@ public class Usine_Script : MonoBehaviour
 
     public void IsSelect()
     {
-        select = true;
-        for(int i = 0; i < CheckPointSelectionner.Count; i++)
+        if(select)
         {
-            CheckPointSelectionner[i].GetComponent<MeshRenderer>().material = Material;
+            IsDeselect();
         }
+        select = true;
+       
     }
 
     public void IsDeselect()
     {
         select = false;
-
+       
     }
 }

@@ -93,12 +93,12 @@ public class IA_Camion : MonoBehaviour
     }
     private void Carton()
     {
-        gameManager.ChangerLaScene("GAMEOVER");
+        gameManager.levelLoose();
         //carton
     }
 
     private void ColisLivrer()
     {
-        
+        gameManager.ChangerLaScene();
     }
 }

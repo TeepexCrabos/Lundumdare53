@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - CheckPoint
+  - Usine
+  - Livraison
   layers:
   - Default
   - TransparentFX

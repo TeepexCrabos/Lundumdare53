@@ -107,6 +107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8379159743092522265}
   - component: {fileID: 4203441252856511199}
+  - component: {fileID: 4599194474496997945}
   m_Layer: 0
   m_Name: Camion
   m_TagString: Untagged
@@ -147,6 +148,29 @@ MonoBehaviour:
   CurrentTargetSet: 0
   RangeForChangeCurrentTarget: 0
   Collision: 0
+  VitesseCamion: 0
+--- !u!195 &4599194474496997945
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7440186971334401008}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.2
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.5
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &8410295802136120235
 GameObject:
   m_ObjectHideFlags: 0
