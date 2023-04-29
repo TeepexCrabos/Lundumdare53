@@ -17,7 +17,8 @@ public class GameManager : MonoBehaviour
     {
         
     }
-    private void SetUsine(List<GameObject>UsineDansleNiveau)
+   
+    public void SetUsine(List<GameObject>UsineDansleNiveau)
     {
         for(int i = 0; i < usine.Count; i++)
         {

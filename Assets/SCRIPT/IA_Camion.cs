@@ -5,7 +5,8 @@ using UnityEngine.AI;
 
 public class IA_Camion : MonoBehaviour
 {
-    [SerializeField] GameObject[] Destination;
+    private Camion_Class camion;
+    [SerializeField] List<GameObject> Destination;
     private Vector3 currentTarget;
     private NavMeshAgent navMeshAgent;
 
@@ -13,6 +14,10 @@ public class IA_Camion : MonoBehaviour
     public float RangeForChangeCurrentTarget;
 
     [SerializeField] bool Collision;
+
+    [SerializeField] float VitesseCamion;
+
+    private Usine_Script Usine;
 
     private int i = 0;
 
@@ -23,6 +28,10 @@ public class IA_Camion : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Usine = this.transform.GetComponentInParent<Usine_Script>();
+        this.GetComponent<MeshRenderer>().material = Usine.Material;
+        setDestination(Usine.CheckPointSelectionner);
+        camion = new Camion_Class(VitesseCamion, Destination);
         CurrentTargetSet = false;
         Collision = false;
     }
@@ -50,9 +59,13 @@ public class IA_Camion : MonoBehaviour
             CurrentTargetSet = false;
     }
 
+    public void setDestination(List<GameObject>destination)
+    {
+        Destination = destination;
+    }
     private void RechercheTarget()
     {
-        currentTarget = Destination[i].transform.position;
+        currentTarget = camion.GetNextDestination(i);
         i++;
         CurrentTargetSet = true;
     }

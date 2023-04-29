@@ -13,5 +13,6 @@ public class checkpoint_Script : MonoBehaviour
     public void Select()
     {
         Selectionner = true;
+
     }
 }
