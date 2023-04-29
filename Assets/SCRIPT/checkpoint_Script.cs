@@ -22,7 +22,6 @@ public class checkpoint_Script : MonoBehaviour
                 Debug.Log("CheckPointAjouterAlaliste");
                 break;
             }
-            
         }
         if(UsineSelect.name == this.gameObject.name)
         {
