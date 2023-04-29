@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     private GameObject UsineSelect;
     private bool UsineSel = false;
     public SpawnCamion_Script usineee;
+    public GameObject lastSelection;
     // Start is called before the first frame update
     void Start()
     {
@@ -75,6 +76,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("Usine Select");
             Usine.GetComponent<Usine_Script>().IsSelect();
             UsineSelect = Usine;
+            lastSelection = UsineSelect;
         }
         /*else if(UsineSel == true && Usine.GetComponent<Usine_Script>().select == false)
         {
@@ -89,6 +91,7 @@ public class GameManager : MonoBehaviour
     }
     public void CheckPointSelector(GameObject CheckPoint)
     {
+        bool effectuer = false;
         bool suppr = false;
         int j = 0;
         int count = 0;
@@ -126,18 +129,30 @@ public class GameManager : MonoBehaviour
                         Debug.Log(j);
                         count--;
                     }
+                    
+                        lastSelection = UsineSelect.GetComponent<Usine_Script>().CheckPointSelectionner[UsineSelect.GetComponent<Usine_Script>().CheckPointSelectionner.Count - 1];
+
+                    
                 }
                 
                 if (suppr == false)
                 {
-                    CheckPoint.GetComponent<checkpoint_Script>().Select(UsineSelect);
+                    effectuer = CheckPoint.GetComponent<checkpoint_Script>().Select(UsineSelect,lastSelection);
+                    if (effectuer)
+                    {
+                        lastSelection = CheckPoint;
+                    }
                     Debug.Log("Point Enregistrer");
                 }
                
             }
             else
             {
-                CheckPoint.GetComponent<checkpoint_Script>().Select(UsineSelect);
+                effectuer = CheckPoint.GetComponent<checkpoint_Script>().Select(UsineSelect, lastSelection);
+                if (effectuer)
+                {
+                    lastSelection = CheckPoint;
+                }
                 Debug.Log("Point Enregistrer");
             }
             /*Debug.Log("BoB1");

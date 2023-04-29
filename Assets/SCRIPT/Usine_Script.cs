@@ -33,7 +33,7 @@ public class Usine_Script : MonoBehaviour
             IsDeselect();
         }
         select = true;
-        this.gameObject.GetComponent<checkpoint_Script>().Select(this.gameObject);
+        this.gameObject.GetComponent<checkpoint_Script>().Select(this.gameObject,this.gameObject);
         //AddCheckPoint(this.gameObject);
         Debug.Log("usine select confirm");
 
