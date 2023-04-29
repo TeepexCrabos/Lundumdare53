@@ -11,6 +11,7 @@ public class SpawnCamion_Script : MonoBehaviour
     
     public void LancerCamion()
     {
+        Debug.Log("CamionSpawn");
         if(SelectionCamion == -1)
             SelectionCamion = Random.Range(0, Prefab_Camion.Length);
         camionModel = SelectionCamion;

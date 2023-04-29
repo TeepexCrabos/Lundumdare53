@@ -50,6 +50,7 @@ public class IA_Camion : MonoBehaviour
     {
         if (!CurrentTargetSet) RechercheTarget();
 
+        Debug.Log("Camion Destination Setup");
         if (CurrentTargetSet)
             navMeshAgent.SetDestination(currentTarget);
 
@@ -57,14 +58,17 @@ public class IA_Camion : MonoBehaviour
 
         if (DistanceToCurrentTarget.magnitude < RangeForChangeCurrentTarget)
             CurrentTargetSet = false;
+        Debug.Log("Camion Destination Attente");
     }
 
     public void setDestination(List<GameObject>destination)
     {
+        
         Destination = destination;
     }
     private void RechercheTarget()
     {
+        Debug.Log("Prochaine desination");
         currentTarget = camion.GetNextDestination(i);
         i++;
         CurrentTargetSet = true;
