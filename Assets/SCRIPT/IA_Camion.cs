@@ -21,6 +21,8 @@ public class IA_Camion : MonoBehaviour
 
     private int i = 0;
 
+    private GameManager gameManager;
+
     public void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -28,6 +30,7 @@ public class IA_Camion : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         Usine = this.transform.GetComponentInParent<Usine_Script>();
         this.GetComponent<MeshRenderer>().material = Usine.Material;
         setDestination(Usine.CheckPointSelectionner);
@@ -90,6 +93,7 @@ public class IA_Camion : MonoBehaviour
     }
     private void Carton()
     {
+        gameManager.ChangerLaScene("GAMEOVER");
         //carton
     }
 
