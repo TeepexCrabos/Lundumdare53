@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
+    [SerializeField] private List<GameObject> UsineDansLeNiveau = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {

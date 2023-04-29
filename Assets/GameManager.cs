@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    private List<GameObject> usine = new List<GameObject>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,4 +17,24 @@ public class GameManager : MonoBehaviour
     {
         
     }
+    private void SetUsine(List<GameObject>UsineDansleNiveau)
+    {
+        for(int i = 0; i < usine.Count; i++)
+        {
+            usine.RemoveAt(i);
+        }
+        for(int j = 0; j < UsineDansleNiveau.Count; j++)
+        {
+            usine.Add(UsineDansleNiveau[j]);
+        }
+    }
+    private void Play()
+    {
+        for(int i = 0; i < usine.Count; i++)
+        {
+            usine[i].GetComponent<SpawnCamion_Script>().LancerCamion();
+        }
+    }
+
+    
 }

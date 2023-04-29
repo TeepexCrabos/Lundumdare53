@@ -106,6 +106,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8379159743092522265}
+  - component: {fileID: 4203441252856511199}
   m_Layer: 0
   m_Name: Camion
   m_TagString: Untagged
@@ -130,6 +131,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4203441252856511199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7440186971334401008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f3b5cee573bd1149bcc8391ad81f773, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Destination: []
+  CurrentTargetSet: 0
+  RangeForChangeCurrentTarget: 0
+  Collision: 0
 --- !u!1 &8410295802136120235
 GameObject:
   m_ObjectHideFlags: 0

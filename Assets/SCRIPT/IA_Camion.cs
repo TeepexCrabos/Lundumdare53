@@ -57,8 +57,27 @@ public class IA_Camion : MonoBehaviour
         CurrentTargetSet = true;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+
+        switch (other.gameObject.tag)
+        {
+            case "Vehicule":
+                Carton();
+                break;
+            case "Livraision":
+                ColisLivrer();
+                break;
+        }
+
+    }
     private void Carton()
     {
         //carton
+    }
+
+    private void ColisLivrer()
+    {
+        
     }
 }
