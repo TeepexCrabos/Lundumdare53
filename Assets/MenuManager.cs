@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class MenuManager : MonoBehaviour
 {
+    public string level = "WIN_MENU";
     public GameManager gamemanager;
     // Start is called before the first frame update
     void Start()
     {
         gamemanager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        gamemanager.Setlevel(level);
     }
 
     public void nextBButtonClic()

@@ -11,8 +11,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private string Message;
     public GameObject HUD;
     // Start is called before the first frame update
-    
-   
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            SceneManager.LoadScene("LEVEL2");
+        }
+    }
+
     public void SetUsine(List<GameObject>UsineDansleNiveau)
     {
         usine = UsineDansleNiveau;

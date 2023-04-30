@@ -93,6 +93,7 @@ public class LevelManager : MonoBehaviour
         bool suppr = false;
         int j = 0;
         int count = 0;
+        Debug.Log("CheckPointSelector");
         if (UsineSelect != null)
         {
             Debug.Log("CheckPoint select");
@@ -158,7 +159,7 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-            //Debug.Log("Selectionner une Usine");
+            Debug.Log("Selectionner une Usine");
         }
 
 
