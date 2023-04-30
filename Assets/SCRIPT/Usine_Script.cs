@@ -6,7 +6,7 @@ public class Usine_Script : MonoBehaviour
 {
      public bool select = false;
      public List<GameObject> CheckPointSelectionner;
-     public Material Material;
+     
     public GameObject Objectif;
 
     // Start is called before the first frame update

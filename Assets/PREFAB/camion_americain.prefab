@@ -207,6 +207,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 187558322491603852}
+  - component: {fileID: 4678710597900326965}
+  - component: {fileID: 8337808296125184850}
+  - component: {fileID: 6040756573855293834}
   m_Layer: 0
   m_Name: camion_americain
   m_TagString: Untagged
@@ -238,6 +241,63 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4678710597900326965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707496014368989494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f3b5cee573bd1149bcc8391ad81f773, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Objectif: {fileID: 0}
+  ObjAttend: 0
+  Destination: []
+  currentTarget: {x: 0, y: 0, z: 0}
+  CurrentTargetSet: 0
+  RangeForChangeCurrentTarget: 0
+  Collision: 0
+  VitesseCamion: 0
+  pasdedestruction: 0
+  devant: {fileID: 6717099768835341061, guid: b5342f59072f4af449f6cd56030dcad8, type: 3}
+--- !u!195 &8337808296125184850
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707496014368989494}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.2
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.78
+  m_BaseOffset: 0.3
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!65 &6040756573855293834
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707496014368989494}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 36.870663, y: 47.54327, z: 73.88579}
+  m_Center: {x: -0.40396303, y: 23.271652, z: 21.871466}
 --- !u!1 &1125482174469676215
 GameObject:
   m_ObjectHideFlags: 0

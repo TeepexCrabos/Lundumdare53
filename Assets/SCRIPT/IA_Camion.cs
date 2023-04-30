@@ -141,7 +141,7 @@ public class IA_Camion : MonoBehaviour
         }
         else
         {
-            gameManager.levelLoose("pas le bon pint de livraison");
+            gameManager.levelLoose("pas le bon point de livraison");
         }
         
     }
