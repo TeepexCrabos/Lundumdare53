@@ -136,7 +136,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   select: 0
   CheckPointSelectionner: []
-  Material: {fileID: 0}
   Objectif: {fileID: 0}
 --- !u!135 &5712083703243312995
 SphereCollider:
@@ -164,7 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefab_Camion:
-  - {fileID: 707496014368989494, guid: 3dbc7041f6445f341ae780c703052cbb, type: 3}
+  - {fileID: 7440186971334401008, guid: b5342f59072f4af449f6cd56030dcad8, type: 3}
   SelectionCamion: 0
   camionModel: 0
 --- !u!114 &5712083703243312997

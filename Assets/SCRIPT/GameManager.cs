@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
                 SceneManager.LoadScene("LEVEL1");
                 break;
             case "GAMEOVER":
-                SceneManager.LoadScene(lastLevel);
+                SceneManager.LoadScene("START_MENU");
                 break;
             case "WIN_MENU":
                 SceneManager.LoadScene("START_MENU");

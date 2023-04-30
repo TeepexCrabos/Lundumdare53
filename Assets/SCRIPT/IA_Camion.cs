@@ -53,10 +53,10 @@ public class IA_Camion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.DrawLine(transform.position, devant.transform.position * 1f, Color.red);
+        Debug.DrawLine(this.transform.position, devant.transform.position * 0.01f, Color.red);
         RaycastHit hit;
         // Does the ray intersect any objects excluding the player layer
-        if (Physics.Raycast(transform.position, devant.transform.position, out hit, 1f))
+        if (Physics.Raycast(this.transform.position, devant.transform.position, out hit, 0.01f))
         { 
             Debug.Log(hit.collider.gameObject.tag);
             if(hit.collider.gameObject.tag == "camion")

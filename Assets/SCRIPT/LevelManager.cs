@@ -95,10 +95,10 @@ public class LevelManager : MonoBehaviour
         int count = 0;
         if (UsineSelect != null)
         {
-            //Debug.Log("CheckPoint select");
+            Debug.Log("CheckPoint select");
             if (UsineSelect.GetComponent<Usine_Script>().CheckPointSelectionner.Count > 0)
             {
-                //Debug.Log("pointselectsupp0");
+                Debug.Log("pointselectsupp0");
                 foreach (GameObject PointSelect in UsineSelect.GetComponent<Usine_Script>().CheckPointSelectionner)
                 {
                     if (PointSelect.name == CheckPoint.name)
@@ -118,11 +118,11 @@ public class LevelManager : MonoBehaviour
                             count = UsineSelect.GetComponent<Usine_Script>().CheckPointSelectionner.Count;
                         }
                     }
-                    //Debug.Log("Bob");
+                    Debug.Log("Bob");
                     while (count > j)
                     {
                         UsineSelect.GetComponent<Usine_Script>().CheckPointSelectionner.RemoveAt(j);
-                        //Debug.Log("Point Suprimer");
+                        Debug.Log("Point Suprimer");
                         //Debug.Log(count);
                         //Debug.Log(j);
                         count--;
@@ -140,12 +140,13 @@ public class LevelManager : MonoBehaviour
                     {
                         lastSelection = CheckPoint;
                     }
-                    //Debug.Log("Point Enregistrer");
+                    Debug.Log("Point Enregistrer");
                 }
 
             }
             else
             {
+                Debug.Log("TestEnregistrement");
                 effectuer = CheckPoint.GetComponent<checkpoint_Script>().Select(UsineSelect, lastSelection);
                 if (effectuer)
                 {
