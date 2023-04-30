@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
                 SceneManager.LoadScene("LEVEL3");
                 break;
             case "LEVEL3":
-                SceneManager.LoadScene("FIN");
+                SceneManager.LoadScene("WIN_MENU");
                 break;
         }
         
