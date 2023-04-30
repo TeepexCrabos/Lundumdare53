@@ -25,6 +25,11 @@ public class Usine_Script : MonoBehaviour
         if(select)
             CheckPointSelectionner.Add(CheckPoint);
     }
+    public void change()
+    {
+        select = false;
+        this.gameObject.GetComponent<checkpoint_Script>().Select(this.gameObject, this.gameObject);
+    }
 
     public void IsSelect()
     {
@@ -34,7 +39,7 @@ public class Usine_Script : MonoBehaviour
         }
         select = true;
         this.gameObject.GetComponent<checkpoint_Script>().Select(this.gameObject,this.gameObject);
-        //AddCheckPoint(this.gameObject);
+        
         Debug.Log("usine select confirm");
 
 
@@ -43,6 +48,6 @@ public class Usine_Script : MonoBehaviour
     public void IsDeselect()
     {
         select = false;
-       
+        CheckPointSelectionner.Clear();
     }
 }

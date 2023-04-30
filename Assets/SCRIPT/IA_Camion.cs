@@ -25,6 +25,10 @@ public class IA_Camion : MonoBehaviour
 
     private GameManager gameManager;
 
+    private LevelManager LevelManager;
+
+    public bool pasdedestruction = false;
+
     public void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -34,6 +38,7 @@ public class IA_Camion : MonoBehaviour
     {
         
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        LevelManager = GameObject.Find("LevelManager").GetComponent<LevelManager>();
         Usine = this.transform.GetComponentInParent<Usine_Script>();
         Objectif = Usine.Objectif;
         //this.GetComponent<MeshRenderer>().material = Usine.Material;
@@ -84,17 +89,28 @@ public class IA_Camion : MonoBehaviour
     {
         Debug.Log("Prochaine desination");
         currentTarget = camion.GetNextDestination(i);
-        if(currentTarget == new Vector3(1000, 1000, 1000))
+       
+        if (currentTarget == new Vector3(1000, 1000, 1000))
         {
-            gameManager.levelLoose();
+            StartCoroutine(wait1Second());
+            
         }
         i++;
         CurrentTargetSet = true;
     }
-
-    private void OnTriggerEnter(Collider other)
+    IEnumerator wait1Second()
     {
-
+        yield return new WaitForSecondsRealtime(2f);
+        if(pasdedestruction == false)
+        {
+            Debug.Log("lol");
+            gameManager.levelLoose("vous vous etes perdu ?");
+        }
+    }
+    private void OnColliderEnter(Collision other)
+    {
+        Debug.Log("collision");
+        pasdedestruction = true;
         switch (other.gameObject.tag)
         {
             case "Vehicule":
@@ -110,16 +126,21 @@ public class IA_Camion : MonoBehaviour
     private void Carton()
     {
         
-        gameManager.levelLoose();
-        //carton
+        gameManager.levelLoose("aie c'est l'accident");
+      
     }
 
-    private void ColisLivrer(Collider other)
+    private void ColisLivrer(Collision other)
     {
         if(other.gameObject.name == Objectif.name)
         {
-            gameManager.ChangerLaScene();
+            LevelManager.BienArrivé++;
+            Destroy(this);
         }
-        gameManager.levelLoose();
+        else
+        {
+            gameManager.levelLoose("pas le bon pint de livraison");
+        }
+        
     }
 }

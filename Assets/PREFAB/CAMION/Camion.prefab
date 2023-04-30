@@ -149,10 +149,12 @@ MonoBehaviour:
   Objectif: {fileID: 0}
   ObjAttend: 0
   Destination: []
+  currentTarget: {x: 0, y: 0, z: 0}
   CurrentTargetSet: 0
   RangeForChangeCurrentTarget: 0
   Collision: 0
   VitesseCamion: 0
+  pasdedestruction: 0
 --- !u!195 &4599194474496997945
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -225,7 +227,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7440186971334401008}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.8708973, y: 1, z: 1}

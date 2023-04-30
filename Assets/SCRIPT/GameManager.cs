@@ -8,10 +8,11 @@ public class GameManager : MonoBehaviour
     [SerializeField]private List<GameObject> usine = new List<GameObject>();
     [SerializeField] private string Niveau;
     private string lastLevel;
-    private GameObject UsineSelect;
+    public GameObject UsineSelect;
     private bool UsineSel = false;
     public SpawnCamion_Script usineee;
     public GameObject lastSelection;
+    private string Message;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,14 +28,7 @@ public class GameManager : MonoBehaviour
     public void SetUsine(List<GameObject>UsineDansleNiveau)
     {
         usine = UsineDansleNiveau;
-        /*for(int i = 0; i < usine.Count; i++)
-        {
-            usine.RemoveAt(i);
-        }
-        for(int j = 0; j < UsineDansleNiveau.Count; j++)
-        {
-            usine.Add(UsineDansleNiveau[j]);
-        }*/
+        
     }
 
 
@@ -71,20 +65,27 @@ public class GameManager : MonoBehaviour
 
     public void UsineSelector(GameObject Usine)
     {
-        if(UsineSel == false)
+        if(UsineSelect == null)
         {
             Debug.Log("Usine Select");
             Usine.GetComponent<Usine_Script>().IsSelect();
             UsineSelect = Usine;
             lastSelection = UsineSelect;
         }
-        /*else if(UsineSel == true && Usine.GetComponent<Usine_Script>().select == false)
+        else if(Usine.name == UsineSelect.name)
         {
-            Debug.Log("Deselectionner l'usine selectionner");
-        }*/
-        else if(UsineSel == true && Usine.GetComponent<Usine_Script>().select == true)
-        {
+            Debug.Log("deselect usine");
             Usine.GetComponent<Usine_Script>().IsSelect();
+            UsineSelect = null;
+            lastSelection = null;
+        }
+        else if(Usine.name != UsineSelect.name)
+        {
+            Debug.Log("Change usine");
+            UsineSelect.GetComponent<Usine_Script>().change();
+            Usine.GetComponent<Usine_Script>().IsSelect();
+            UsineSelect = Usine;
+            lastSelection = UsineSelect;
         }
         
        
@@ -97,7 +98,7 @@ public class GameManager : MonoBehaviour
         int count = 0;
         if (UsineSelect != null)
         {
-            Debug.Log("usine select");
+            Debug.Log("CheckPoint select");
             if (UsineSelect.GetComponent<Usine_Script>().CheckPointSelectionner.Count > 0)
             {
                 Debug.Log("pointselectsupp0");
@@ -155,37 +156,7 @@ public class GameManager : MonoBehaviour
                 }
                 Debug.Log("Point Enregistrer");
             }
-            /*Debug.Log("BoB1");
-            if (UsineSelect.GetComponent<Usine_Script>().CheckPointSelectionner.Count == 1)
-            {
-                Debug.Log("BoB2");
-                for (int i = 0; i < UsineSelect.GetComponent<Usine_Script>().CheckPointSelectionner.Count; i++)
-                {
-                    if (CheckPoint.name == UsineSelect.GetComponent<Usine_Script>().CheckPointSelectionner[i].name)
-                    {
-                        UsineSelect.GetComponent<Usine_Script>().CheckPointSelectionner.RemoveAt(i);
-                        Debug.Log("Point Suprimer");
-                        break;
-
-                    }
-                    else 
-                    {
-                        CheckPoint.GetComponent<checkpoint_Script>().Select(UsineSelect);
-                        Debug.Log("Point Enregistrer");
-                        
-
-                    }
-
-                }
-                
-            }
-            else
-            {
-                Debug.Log("BoB2'");
-                CheckPoint.GetComponent<checkpoint_Script>().Select(UsineSelect);
-                Debug.Log("Point Enregistrer");
-            }
-            */
+            
         }
         else
         {
@@ -233,8 +204,9 @@ public class GameManager : MonoBehaviour
         }
         
     }
-    public void levelLoose()
+    public void levelLoose(string Message)
     {
+        this.Message = Message;
         SceneManager.LoadScene("GAMEOVER_MENU");
     }
 

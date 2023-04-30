@@ -8,6 +8,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private List<GameObject> UsineDansLeNiveau = new List<GameObject>();
     private GameManager GameManager;
     [SerializeField] private string Niveau;
+    public int BienArrivé;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,16 +16,12 @@ public class LevelManager : MonoBehaviour
         GameManager.Setlevel(Niveau);
         GameManager.SetUsine(UsineDansLeNiveau);
     }
-
-   /* public void play()
+    private void FixedUpdate()
     {
-        Debug.Log("bob");
-        for (int i = 0; i < UsineDansLeNiveau.Count; i++)
+        if (BienArrivé == UsineDansLeNiveau.Count)
         {
-            Debug.Log(UsineDansLeNiveau[i].GetComponent<SpawnCamion_Script>());
-            UsineDansLeNiveau[i].GetComponent<SpawnCamion_Script>();//LancerCamion();
-           
+            GameManager.ChangerLaScene();
         }
-        Debug.Log("bob3");
-    }*/
+    }
+    
 }
