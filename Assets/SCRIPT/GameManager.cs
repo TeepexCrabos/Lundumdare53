@@ -67,21 +67,21 @@ public class GameManager : MonoBehaviour
     {
         if(UsineSelect == null)
         {
-            Debug.Log("Usine Select");
+            //Debug.Log("Usine Select");
             Usine.GetComponent<Usine_Script>().IsSelect();
             UsineSelect = Usine;
             lastSelection = UsineSelect;
         }
         else if(Usine.name == UsineSelect.name)
         {
-            Debug.Log("deselect usine");
+            //Debug.Log("deselect usine");
             Usine.GetComponent<Usine_Script>().IsSelect();
             UsineSelect = null;
             lastSelection = null;
         }
         else if(Usine.name != UsineSelect.name)
         {
-            Debug.Log("Change usine");
+            //Debug.Log("Change usine");
             UsineSelect.GetComponent<Usine_Script>().change();
             Usine.GetComponent<Usine_Script>().IsSelect();
             UsineSelect = Usine;
@@ -98,10 +98,10 @@ public class GameManager : MonoBehaviour
         int count = 0;
         if (UsineSelect != null)
         {
-            Debug.Log("CheckPoint select");
+            //Debug.Log("CheckPoint select");
             if (UsineSelect.GetComponent<Usine_Script>().CheckPointSelectionner.Count > 0)
             {
-                Debug.Log("pointselectsupp0");
+                //Debug.Log("pointselectsupp0");
                 foreach (GameObject PointSelect in UsineSelect.GetComponent<Usine_Script>().CheckPointSelectionner)
                 {
                     if(PointSelect.name == CheckPoint.name)
@@ -121,13 +121,13 @@ public class GameManager : MonoBehaviour
                             count = UsineSelect.GetComponent<Usine_Script>().CheckPointSelectionner.Count;
                         }
                     }
-                    Debug.Log("Bob");
+                    //Debug.Log("Bob");
                     while(count > j)
                     {
                         UsineSelect.GetComponent<Usine_Script>().CheckPointSelectionner.RemoveAt(j);
-                        Debug.Log("Point Suprimer");
-                        Debug.Log(count);
-                        Debug.Log(j);
+                        //Debug.Log("Point Suprimer");
+                        //Debug.Log(count);
+                        //Debug.Log(j);
                         count--;
                     }
                     
@@ -143,7 +143,7 @@ public class GameManager : MonoBehaviour
                     {
                         lastSelection = CheckPoint;
                     }
-                    Debug.Log("Point Enregistrer");
+                    //Debug.Log("Point Enregistrer");
                 }
                
             }
@@ -154,13 +154,13 @@ public class GameManager : MonoBehaviour
                 {
                     lastSelection = CheckPoint;
                 }
-                Debug.Log("Point Enregistrer");
+                //Debug.Log("Point Enregistrer");
             }
             
         }
         else
         {
-            Debug.Log("Selectionner une Usine");
+            //Debug.Log("Selectionner une Usine");
         }
         
         

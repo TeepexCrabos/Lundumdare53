@@ -29,6 +29,8 @@ public class IA_Camion : MonoBehaviour
 
     public bool pasdedestruction = false;
 
+    public GameObject devant;
+
     public void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -49,16 +51,28 @@ public class IA_Camion : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if(Collision == false)
-        {
-            Deplacement();
+        Debug.DrawLine(transform.position, devant.transform.position * 1f, Color.red);
+        RaycastHit hit;
+        // Does the ray intersect any objects excluding the player layer
+        if (Physics.Raycast(transform.position, devant.transform.position, out hit, 1f))
+        { 
+            Debug.Log(hit.collider.gameObject.tag);
+            if(hit.collider.gameObject.tag == "camion")
+            {
+                Carton();
+            }
+            else if(hit.collider.gameObject.tag == "Livraison")
+            {
+                ColisLivrer(hit.collider.gameObject.name);
+            }
         }
         else
         {
-            Carton();
+            Deplacement();
         }
+       
         
     }
 
@@ -66,16 +80,17 @@ public class IA_Camion : MonoBehaviour
     {
         if (!CurrentTargetSet) RechercheTarget();
 
-        Debug.Log("Camion Destination Setup");
+        //Debug.Log("Camion Destination Setup");
         if (CurrentTargetSet)
             navMeshAgent.SetDestination(currentTarget);
 
         Vector3 DistanceToCurrentTarget = transform.position - currentTarget;
+        Debug.Log(DistanceToCurrentTarget.magnitude);
 
-        if (DistanceToCurrentTarget.magnitude <= 1f/*RangeForChangeCurrentTarget*/)
+        if (DistanceToCurrentTarget.magnitude <= 1.2f/*RangeForChangeCurrentTarget*/)
         {
             CurrentTargetSet = false;
-            Debug.Log("Camion Destination Attente");
+            //Debug.Log("Camion Destination Attente");
         }
             
     }
@@ -87,7 +102,7 @@ public class IA_Camion : MonoBehaviour
     }
     private void RechercheTarget()
     {
-        Debug.Log("Prochaine desination");
+        //Debug.Log("Prochaine desination");
         currentTarget = camion.GetNextDestination(i);
        
         if (currentTarget == new Vector3(1000, 1000, 1000))
@@ -100,28 +115,24 @@ public class IA_Camion : MonoBehaviour
     }
     IEnumerator wait1Second()
     {
-        yield return new WaitForSecondsRealtime(2f);
+        yield return new WaitForSecondsRealtime(1f);
         if(pasdedestruction == false)
         {
             Debug.Log("lol");
             gameManager.levelLoose("vous vous etes perdu ?");
         }
     }
+    
+
     private void OnColliderEnter(Collision other)
     {
-        Debug.Log("collision");
+        Debug.Log("Trigger");
         pasdedestruction = true;
-        switch (other.gameObject.tag)
+        if (other.gameObject.tag == "camion")
         {
-            case "Vehicule":
-                Carton();
-                break;
-            case "Livraision":
-                ColisLivrer(other);
-                break;
-             
+            Carton();
         }
-
+        
     }
     private void Carton()
     {
@@ -130,12 +141,12 @@ public class IA_Camion : MonoBehaviour
       
     }
 
-    private void ColisLivrer(Collision other)
+    private void ColisLivrer(string other)
     {
-        if(other.gameObject.name == Objectif.name)
+        if(other == Objectif.name)
         {
             LevelManager.BienArrivé++;
-            Destroy(this);
+            Destroy(this.gameObject);
         }
         else
         {

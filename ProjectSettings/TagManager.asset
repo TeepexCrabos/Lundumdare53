@@ -7,11 +7,12 @@ TagManager:
   - CheckPoint
   - Usine
   - Livraison
+  - camion
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Raycast
   - Water
   - UI
   - 
