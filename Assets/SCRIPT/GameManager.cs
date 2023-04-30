@@ -7,12 +7,13 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField]private List<GameObject> usine = new List<GameObject>();
     [SerializeField] private string Niveau;
-    private string lastLevel;
+    [SerializeField] private string lastLevel;
     public GameObject UsineSelect;
     private bool UsineSel = false;
     public SpawnCamion_Script usineee;
     public GameObject lastSelection;
-    private string Message;
+    [SerializeField] private string Message;
+    [SerializeField] GameObject HUD;
     // Start is called before the first frame update
     void Start()
     {
@@ -53,6 +54,7 @@ public class GameManager : MonoBehaviour
             {
                 usine[i].GetComponent<SpawnCamion_Script>().LancerCamion();
             }
+            HUD.SetActive(false);
         }
         
     }

@@ -16,7 +16,7 @@ public class Livraison_Script : MonoBehaviour
     {
         
     }
-   /* private void OnTriggerEnter(Collider other)
+   /*private void OnTriggerEnter(Collider other)
     {
         Debug.Log("camion arrivé");
         if (other.gameObject.tag == "camion")

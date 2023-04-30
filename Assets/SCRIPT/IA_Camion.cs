@@ -51,7 +51,7 @@ public class IA_Camion : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         Debug.DrawLine(transform.position, devant.transform.position * 1f, Color.red);
         RaycastHit hit;
@@ -61,10 +61,12 @@ public class IA_Camion : MonoBehaviour
             Debug.Log(hit.collider.gameObject.tag);
             if(hit.collider.gameObject.tag == "camion")
             {
+                pasdedestruction = true;
                 Carton();
             }
-            else if(hit.collider.gameObject.tag == "Livraison")
+            if(hit.collider.gameObject.tag == "Livraison")
             {
+                pasdedestruction = true;
                 ColisLivrer(hit.collider.gameObject.name);
             }
         }
@@ -85,7 +87,7 @@ public class IA_Camion : MonoBehaviour
             navMeshAgent.SetDestination(currentTarget);
 
         Vector3 DistanceToCurrentTarget = transform.position - currentTarget;
-        Debug.Log(DistanceToCurrentTarget.magnitude);
+        //Debug.Log(DistanceToCurrentTarget.magnitude);
 
         if (DistanceToCurrentTarget.magnitude <= 1.2f/*RangeForChangeCurrentTarget*/)
         {
@@ -104,36 +106,25 @@ public class IA_Camion : MonoBehaviour
     {
         //Debug.Log("Prochaine desination");
         currentTarget = camion.GetNextDestination(i);
-       
-        if (currentTarget == new Vector3(1000, 1000, 1000))
+       if( i > Destination.Count)
         {
-            StartCoroutine(wait1Second());
-            
+            if (currentTarget == Destination[Destination.Count-1].transform.position)
+            {
+                ColisLivrer(Destination[Destination.Count-1].name);
+
+            }
+            else
+            {
+                gameManager.levelLoose("vous vous etes perdu ?");
+            }
         }
+        
         i++;
         CurrentTargetSet = true;
     }
-    IEnumerator wait1Second()
-    {
-        yield return new WaitForSecondsRealtime(1f);
-        if(pasdedestruction == false)
-        {
-            Debug.Log("lol");
-            gameManager.levelLoose("vous vous etes perdu ?");
-        }
-    }
+   
     
 
-    private void OnColliderEnter(Collision other)
-    {
-        Debug.Log("Trigger");
-        pasdedestruction = true;
-        if (other.gameObject.tag == "camion")
-        {
-            Carton();
-        }
-        
-    }
     private void Carton()
     {
         
